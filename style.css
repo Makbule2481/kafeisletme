@@ -106,6 +106,7 @@ details ul {
     margin-bottom: 8px;
     padding-left: 0px;
 }
+
 /* Özel menü açıklamaları */
 .menu-desc {
     margin: 8px 0 16px 20px;
@@ -192,25 +193,33 @@ details ul {
         font-size: 0.95rem;
     }
 }
+
 /* =================================================
    TASK 2 – GENEL SAYFA & ŞERİT
 ================================================= */
 
 /* Genel kapsayıcı: sayfa ortasında ama kenarlarda boşluk */
 .main-container {
-    max-width: 1200px;      /* Maksimum genişlik */
-    margin: 0 auto;         /* Ortala sayfa */
-    padding: 20px;          /* Kenarlarda boşluk */
+    max-width: 1200px;
+    /* Maksimum genişlik */
+    margin: 0 auto;
+    /* Ortala sayfa */
+    padding: 20px;
+    /* Kenarlarda boşluk */
 }
 
 /* Başlık şeridi */
 .page-header {
-    background-color: #6f4e37;  /* Kahve tonlu şerit */
+    background-color: #6f4e37;
+    /* Kahve tonlu şerit */
     color: #fff;
-    text-align: center;          /* Başlık ve alt yazıyı ortala */
-    padding: 40px 20px;          /* Şerit yüksekliği + yatay boşluk */
+    text-align: center;
+    /* Başlık ve alt yazıyı ortala */
+    padding: 40px 20px;
+    /* Şerit yüksekliği + yatay boşluk */
     border-radius: 12px;
-    margin-bottom: 40px;         /* Kartlardan boşluk bırak */
+    margin-bottom: 40px;
+    /* Kartlardan boşluk bırak */
 }
 
 /* Başlık ve alt yazı */
@@ -231,17 +240,20 @@ details ul {
 /* Kart kapsayıcı – grid ile yan yana */
 .pricing-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* PC: 3 kart */
-    gap: 30px;                              /* Kartlar arası boşluk */
+    grid-template-columns: repeat(3, 1fr);
+    /* PC: 3 kart */
+    gap: 30px;
+    /* Kartlar arası boşluk */
     margin-top: 20px;
-    padding: 0 20px;                        /* Kenarlarda boşluk */
+    padding: 0 20px;
+    /* Kenarlarda boşluk */
 }
 
 /* Kartın kendisi */
 .card {
     background-color: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -251,13 +263,14 @@ details ul {
 /* Hover efekti – hafif yükselme ve gölge */
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* Kart üst kısmı */
 .card-header {
     padding: 20px;
-    background-color: #f5efe6;             /* Yumuşak kahve tonu */
+    background-color: #f5efe6;
+    /* Yumuşak kahve tonu */
     border-bottom: 1px solid #e0d6cc;
 }
 
@@ -286,8 +299,10 @@ details ul {
 }
 
 .card-body ul {
-    list-style: disc;           /* Madde işareti */
-    padding-left: 20px;         /* Soldan boşluk */
+    list-style: disc;
+    /* Madde işareti */
+    padding-left: 20px;
+    /* Soldan boşluk */
     margin-top: 10px;
 }
 
@@ -375,4 +390,130 @@ details ul {
         font-size: 1rem;
     }
 }
+/* ============================= */
+/* TEAM / KADRO SAYFASI */
+/* ============================= */
 
+.team-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.team-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #3e2723;
+}
+
+.team-desc {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    color: #5d4037;
+}
+
+/* GRID */
+.team-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.team-card {
+    perspective: 1000px;
+    transition: transform 0.4s ease;
+}
+
+/* SLIDE UP */
+.team-card:hover {
+    transform: translateY(-12px);
+}
+
+/* INNER (FLIP ALANI) */
+.card-inner {
+    position: relative;
+    height: 260px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+/* FLIP */
+.team-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* FRONT & BACK */
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 20px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #c2b194;
+}
+
+.card-front span {
+    margin-top: 6px;
+    font-weight: bold;
+}
+
+/* BACK */
+.card-back {
+    transform: rotateY(180deg);
+    background-color: #6d4c41;
+    color: #fff;
+}
+
+.card-back ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* CONTACT */
+.card-contact {
+    margin-top: 12px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.team-card:hover .card-contact {
+    opacity: 1;
+}
+
+/* ============================= */
+/* 👑 DEVELOPER ÖZEL TASARIM */
+/* ============================= */
+
+.team-card.developer {
+    box-shadow: 0 0 25px rgba(109, 76, 65, 0.4);
+}
+
+/* SERTİFİKA ANİMASYONU */
+.certificate {
+    position: relative;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: glow 1.6s infinite;
+}
+
+/* PARLAMA */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ffd54f;
+    }
+    50% {
+        box-shadow: 0 0 18px #ffd54f;
+    }
+    100% {
+        box-shadow: 0 0 5px #ffd54f;
+    }
+}
